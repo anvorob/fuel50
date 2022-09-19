@@ -16,27 +16,27 @@ resource "aws_subnet" "public" {
   }
 }
 
-resource "aws_network_acl_rule" "deny_ssh" {
-  network_acl_id = aws_vpc.main.default_network_acl_id
-  rule_number    = 20
-  egress         = false
-  protocol       = "tcp"
-  rule_action    = "deny"
-  cidr_block     = "0.0.0.0/0"
-  from_port      = 22
-  to_port        = 22
-}
+# resource "aws_network_acl_rule" "deny_ssh" {
+#   network_acl_id = aws_vpc.main.default_network_acl_id
+#   rule_number    = 20
+#   egress         = false
+#   protocol       = "tcp"
+#   rule_action    = "deny"
+#   cidr_block     = "0.0.0.0/0"
+#   from_port      = 22
+#   to_port        = 22
+# }
 
-resource "aws_network_acl_rule" "deny_rdp" {
-  network_acl_id = aws_vpc.main.default_network_acl_id
-  rule_number    = 21
-  egress         = false
-  protocol       = "tcp"
-  rule_action    = "deny"
-  cidr_block     = "0.0.0.0/0"
-  from_port      = 3389
-  to_port        = 3389
-}
+# resource "aws_network_acl_rule" "deny_rdp" {
+#   network_acl_id = aws_vpc.main.default_network_acl_id
+#   rule_number    = 21
+#   egress         = false
+#   protocol       = "tcp"
+#   rule_action    = "deny"
+#   cidr_block     = "0.0.0.0/0"
+#   from_port      = 3389
+#   to_port        = 3389
+# }
 
 // Internet Gateway
 resource "aws_internet_gateway" "main" {
