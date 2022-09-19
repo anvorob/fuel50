@@ -1,4 +1,12 @@
 # fuel50
+Infrastructure:
+IP address to access web site 52.65.82.83
+Web page is deployed using EC2 instance and html/css files created as part of cloud-init process.
+The better way would be to upload files via file provisioner but there was an issue locating destination directory which i think is linked to user home dir.
+
+Another ways to deploy bigger web application would be to use ECS and Fargate, however I dont have experience deploying that.
+Alternatively EKS could be used aswell. Docker image is required for that and should be upload to ECR.
+
 
 Top 5 things to do to harden a Linux AMI from AWS.
 1. Limit port access - only allow inbound traffic on limited ports like 22 for SSH or 80/443 HTTP/HTTPS
